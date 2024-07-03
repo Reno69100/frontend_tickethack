@@ -1,4 +1,4 @@
-fetch(`http://localhost:3000/temps`).then(reponse => reponse.json()).then(data => {
+fetch(`https://backend-tickethack-drab.vercel.app/temps`).then(reponse => reponse.json()).then(data => {
     document.querySelector('#mini-container-cart').innerHTML = `
         <p>My cart</p>
         <div id="liste-temps">
@@ -30,7 +30,7 @@ fetch(`http://localhost:3000/temps`).then(reponse => reponse.json()).then(data =
         for (let element of document.querySelectorAll('.temps')) {
             element.querySelector('.delete').addEventListener('click', function () {
                 
-                fetch('http://localhost:3000/temps', {
+                fetch('https://backend-tickethack-drab.vercel.app/temps', {
                     method: 'DELETE',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({id: element.querySelector('.id-temps').textContent})
@@ -39,7 +39,7 @@ fetch(`http://localhost:3000/temps`).then(reponse => reponse.json()).then(data =
         }
 
         document.querySelector('#purchase').addEventListener('click', function () {      
-            fetch('http://localhost:3000/bookings/purchase').then(response => response.json()).then(() => window.location.assign('bookings.html'))
+            fetch('https://backend-tickethack-drab.vercel.app/bookings/purchase').then(response => response.json()).then(() => window.location.assign('bookings.html'))
         })
     } else {
         document.querySelector('#mini-container-cart').innerHTML = `

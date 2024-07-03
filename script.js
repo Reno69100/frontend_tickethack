@@ -4,7 +4,7 @@ document.querySelector('#search').addEventListener('click', function () {
     let date = document.querySelector('#date').value
 
     if (departure && arrival && date) {
-        fetch(`http://localhost:3000/search/${departure}/${arrival}/${date}`).then(reponse => reponse.json()).then(data => {
+        fetch(`https://backend-tickethack-drab.vercel.app/search/${departure}/${arrival}/${date}`).then(reponse => reponse.json()).then(data => {
             console.log(data)
             if (data.trips.length < 1) {
                 document.querySelector('#mini-container-result').innerHTML = `
@@ -40,7 +40,7 @@ document.querySelector('#search').addEventListener('click', function () {
                             price: this.parentNode.querySelector('.price-trip').textContent,
                         }
                         
-                        fetch('http://localhost:3000/temps', {
+                        fetch('https://backend-tickethack-drab.vercel.app/temps', {
                             method: 'POST',
                             headers: { 'Content-Type': 'application/json' },
                             body: JSON.stringify(newTemp)

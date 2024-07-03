@@ -1,4 +1,4 @@
-fetch(`http://localhost:3000/bookings`).then(reponse => reponse.json()).then(data => {
+fetch(`https://backend-tickethack-drab.vercel.app/bookings`).then(reponse => reponse.json()).then(data => {
     document.querySelector('#mini-container-bookings').innerHTML = `
         <p>My bookings</p>
         <div id="liste-bookings">
